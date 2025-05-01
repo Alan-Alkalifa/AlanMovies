@@ -1,8 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Alan Movie — Next.js Project Documentation
 
-## Getting Started
+Welcome to the official documentation for **Alan Movie**, a modern web application built using [Next.js](https://nextjs.org) — the React framework for production. Alan Movie is designed to deliver seamless movie browsing experiences, powered by API integrations (such as TMDb), beautiful UI/UX, and optimized performance.
 
-First, run the development server:
+---
+
+## 🚀 Getting Started
+
+To run this project locally, follow the steps below:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Alan-Alkalifa/AlanMovies.git
+cd alan-movie
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### 3. Set Environment Variables
+
+Create a `.env.local` file in the root directory with the following content:
+
+```env
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
+```
+
+> Replace `your_tmdb_api_key_here` with your actual TMDb API key.
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
@@ -14,23 +47,49 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now open [http://localhost:3000](http://localhost:3000) to see **Alan Movie** in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧩 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ✅ **Dynamic Routing** for movie detail pages (`/Movie/[id]`)
+- 🖼️ **Responsive Design** with Tailwind CSS
+- 📦 **API Integration** with [TMDb](https://www.themoviedb.org/)
+- ⚡ **Server-Side Rendering** for SEO-friendly content
+- 🗂️ **Modular Components** for better reusability and maintenance
+- 🌐 **Font Optimization** using `next/font` and [Geist](https://vercel.com/font)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Learn More
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To deepen your understanding of the stack used in this project:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [TMDb API Documentation](https://developer.themoviedb.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+We recommend deploying on [Vercel](https://vercel.com/) — the creators of Next.js.
+
+To deploy:
+
+1. Push your project to GitHub.
+2. Go to [vercel.com/new](https://vercel.com/new) and import your GitHub repo.
+3. Add your `.env` variables in the Vercel dashboard.
+4. Click **Deploy**.
+
+---
+
+## 👨‍💻 Author
+
+**Alan Movie** is developed and maintained by [Your Name or Team Name].
+
+For feedback or feature requests, please open an issue or contribute via pull request.
+
+---
+
+Would you like this documentation exported as a Markdown file or added as a README for your GitHub repo?
