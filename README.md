@@ -86,7 +86,7 @@ To deploy:
 
 ## 👨‍💻 Author
 
-**Alan Movie** is developed and maintained by [Your Name or Team Name].
+**Alan Movie** is developed and maintained by Alan Alkalifa.
 
 For feedback or feature requests, please open an issue or contribute via pull request.
 
