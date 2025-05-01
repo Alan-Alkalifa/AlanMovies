@@ -1,23 +1,27 @@
 import axios from "axios";
 import Link from "next/link";
 
-interface Params {
-  params: {
-    id: string;
-  };
-}
-
-export default async function MovieDetail({ params }: Params) {
+export default async function MovieDetail({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
   const [movieRes, videoRes] = await Promise.all([
-    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits`),
-    axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
+    axios.get(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits`
+    ),
+    axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`
+    ),
   ]);
 
   const movie = movieRes.data;
-  const videoKey = videoRes.data.results?.find((v: any) => v.type === 'Trailer' && v.site === 'YouTube')?.key;
+  const videoKey = videoRes.data.results?.find(
+    (v: any) => v.type === "Trailer" && v.site === "YouTube"
+  )?.key;
   const cast = movie.credits?.cast?.slice(0, 6) || [];
 
   return (
@@ -93,15 +97,22 @@ export default async function MovieDetail({ params }: Params) {
           <h2 className="text-2xl font-semibold mb-6">👥 Top Cast</h2>
           <div className="flex gap-4 overflow-x-auto pb-2">
             {cast.map((actor: any) => (
-              <div key={actor.id} className="w-[140px] flex-shrink-0 bg-zinc-800 rounded-xl shadow-md p-2">
+              <div
+                key={actor.id}
+                className="w-[140px] flex-shrink-0 bg-zinc-800 rounded-xl shadow-md p-2"
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`}
                   alt={actor.name}
                   className="w-full h-[200px] object-cover rounded-md mb-2"
                 />
                 <div className="text-center">
-                  <p className="text-sm font-medium text-gray-100 truncate">{actor.name}</p>
-                  <p className="text-xs text-gray-400 truncate">{actor.character}</p>
+                  <p className="text-sm font-medium text-gray-100 truncate">
+                    {actor.name}
+                  </p>
+                  <p className="text-xs text-gray-400 truncate">
+                    {actor.character}
+                  </p>
                 </div>
               </div>
             ))}

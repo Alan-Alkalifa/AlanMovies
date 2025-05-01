@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, FastForward } from "lucide-react";
 
-interface Params {
+interface Props {
   params: {
     id: string;
   };
@@ -13,10 +13,10 @@ interface Params {
   };
 }
 
-export default async function WatchMovie({ params, searchParams }: Params) {
-  const { id } = params;
-  const season = searchParams?.season;
-  const episode = searchParams?.episode;
+export default async function WatchMovie(props: Props) {
+  const id = props.params.id;
+  const season = props.searchParams?.season;
+  const episode = props.searchParams?.episode;
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
   const isTV = season && episode;
