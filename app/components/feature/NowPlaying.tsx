@@ -1,6 +1,6 @@
 // File: app/(home)/NowPlaying.tsx
 
-import SearchResultCard from './../ui/SearchResultCard';
+import SearchResultCard from '../ui/SearchResultCard';
 import axios from 'axios';
 
 export default async function NowPlaying() {
@@ -9,7 +9,6 @@ export default async function NowPlaying() {
     `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`
   );
   const movies = res.data.results;
-
   return (
     <section className="px-4 py-10 max-w-7xl mx-auto">
       <h1 className="text-2xl font-bold mb-6 text-white">Now Playing</h1>
