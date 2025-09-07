@@ -64,9 +64,7 @@ export default async function MovieDetail({
           </div>
 
           {/* Overview */}
-          <p className="text-gray-300 leading-relaxed mb-6">
-            {movie.overview}
-          </p>
+          <p className="text-gray-300 leading-relaxed mb-6">{movie.overview}</p>
 
           <Link href={`/Watch/${id}`}>
             <button className="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-full shadow text-white font-semibold w-fit">

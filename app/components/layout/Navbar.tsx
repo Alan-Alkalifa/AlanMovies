@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* Logo & Desktop Nav */}
         <div className="flex items-center gap-8">
           <Link href="/" className="text-3xl font-bold text-red-600 tracking-tight">
-            ALANMOVIE
+            THE MOVIES
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
